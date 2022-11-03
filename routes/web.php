@@ -20,13 +20,15 @@ use Psy\TabCompletion\Matcher\FunctionsMatcher;
 
 Route::get('/', function () {
     return view('home', [
-        "title" => "Home"
+        "title" => "Home",
+        'active' => 'home',
     ]);
 });
 
 Route::get('/about', function () {
     return view('about', [
         "title" => "About",
+        'active' => 'about',
         "name" => "M.Tegar Nurul Fuad Rosmali",
         "email" => "02tegarrosmali@gmail.com",
         "image" => "profile.jpeg"
