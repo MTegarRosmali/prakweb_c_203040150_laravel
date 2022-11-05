@@ -1,11 +1,10 @@
 <?php
 
-use App\Http\Controllers\PostController;
-use App\Models\Category;
-use App\Models\User;
-use App\Models\Post;
 use Illuminate\Support\Facades\Route;
-use Psy\TabCompletion\Matcher\FunctionsMatcher;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Models\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,9 +34,6 @@ Route::get('/about', function () {
     ]);
 });
 
-
-
-
 Route::get('/blog', [PostController::class, 'index']);
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
@@ -49,3 +45,7 @@ Route::get('/categories', function() {
         'categories' => Category::all()
     ]);
 });
+
+Route::get('/login', [LoginController::class, 'index']);
+
+Route::get('/register', [RegisterController::class, 'index']);
