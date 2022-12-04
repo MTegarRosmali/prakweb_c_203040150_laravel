@@ -8,7 +8,6 @@ use Cviebrock\EloquentSluggable\Sluggable;
  
 class Post extends Model
 {
-    use HasFactory;
     use HasFactory, Sluggable;
  
 
